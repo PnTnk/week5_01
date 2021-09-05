@@ -1,18 +1,75 @@
 #include<stdio.h>
-int factorial(int);
+
+
 int main() {
-	int num;
-	printf("Enter number :");
-	scanf_s("%d", &num);
-	int a = factorial(num);
-	printf("Factorial 0f %d is %d", num,a);
-	return 0;
-}
-int factorial(int x) {
-	unsigned long b = 1;
-	while (x > 0) {
-		b *= x;
-		x -= 1;
+	int n;
+	printf("Enter number : ");
+	scanf_s("%d", &n);
+	int x = 1;
+	while (x <= n) 
+	{
+		int a = 1;
+		if (x > 1) 
+		{
+			while(a<2*n)
+			{
+				if (a != x && a != 2 * n - x) 
+				{
+					printf(" ");
+					a += 1;
+				}
+				else 
+				{ 
+					printf("*");
+					a += 1;
+				}
+			}
+		}
+		else 
+		{
+			while (a <= 2 * n - x) 
+			{
+				printf("*");
+				a += 1;
+			}
+		}
+		x += 1;
+		printf("\n");
 	}
-	return b;
+	int y = 1;
+	while (y < n) 
+	{
+		int b = 1;
+		if (y <n-1 ) 
+		{
+		
+			
+			while (b < 2 * n) {
+				if (b != n - y && b != n + y)
+				{
+					printf(" ");
+					b += 1;
+				}
+
+
+				else
+				{
+					printf("*");
+					b += 1;
+				}
+			}
+		}
+		else 
+		{
+			while (b <= 2 * n - 1)
+			{
+				printf("*");
+				b += 1;
+			}
+		}
+		y += 1;
+		printf("\n");
+	}
+
+	return 0;
 }
